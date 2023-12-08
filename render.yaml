@@ -1,6 +1,6 @@
 # render.yaml
 services:
-  - name: your-app-name
+  - name: dailynews
     type: web
     buildCommand: npm run build
     startCommand: npm run dev
