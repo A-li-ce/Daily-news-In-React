@@ -1,0 +1,13 @@
+{
+    "headers": [
+      {
+        "source": "https://newsapi.org/**",
+        "headers": [
+          { "key": "Access-Control-Allow-Origin", "value": "https://daily-news-in-react.vercel.app" },
+          { "key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS" },
+          { "key": "Access-Control-Allow-Headers", "value": "*" }
+        ]
+      }
+    ]
+  }
+  
