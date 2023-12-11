@@ -1,7 +1,0 @@
-# render.yaml
-services:
-  - name: dailynews
-    type: web
-    buildCommand: npm run build
-    startCommand: npm run dev
-    httpPort: 5173
