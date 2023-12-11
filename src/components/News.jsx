@@ -21,12 +21,13 @@ const News = (props) => {
     const updateNews = async () => {
       let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${apiKey}&page=${page}&pageSize=${props.pageSize}`
       setLoading(true)
-      let data = await fetch(url,{
-        headers: {
-          'Authorization': `Bearer ${apiKey}`,
-          // 'Content-Type': 'application/json',
-        }
-      });
+      let data = await fetch(url)
+      // ,{
+      //   headers: {
+      //     'Authorization': `Bearer ${apiKey}`,
+      //     // 'Content-Type': 'application/json',
+      //   }
+      // });
       
       let parsedData = await data.json();
       setArticles(parsedData.articles);
