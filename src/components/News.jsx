@@ -17,12 +17,14 @@ const News = (props) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
 
+    const apiKey = "1b0c0f70c3914cc594b00380a34382b9";
     const updateNews = async () => {
-      let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${import.meta.env.VITE_NEWS_API}&page=${page}&pageSize=${props.pageSize}`
+      let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${apiKey}&page=${page}&pageSize=${props.pageSize}`
       setLoading(true)
       let data = await fetch(url,{
         headers: {
-          'Authorization': `Bearer ${import.meta.env.VITE_NEWS_API}`,
+          'Authorization': `Bearer ${apiKey}`,
+          // 'Content-Type': 'application/json',
         }
       });
       

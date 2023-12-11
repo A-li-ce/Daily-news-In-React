@@ -15,7 +15,7 @@ import Spinner from './components/Spinner'
 const App = ()=>{ 
 
     let pageSize = 20
-    const apiKey = import.meta.env.VITE_NEWS_API
+    const apiKey = '1b0c0f70c3914cc594b00380a34382b9';
 
     return (
       <div >
