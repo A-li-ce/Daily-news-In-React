@@ -18,9 +18,14 @@ const News = (props) => {
   };
 
     const updateNews = async () => {
-      let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=1b0c0f70c3914cc594b00380a34382b9&page=${page}&pageSize=${props.pageSize}`
+      let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${import.meta.env.VITE_NEWS_API}&page=${page}&pageSize=${props.pageSize}`
       setLoading(true)
-      let data = await fetch(url);
+      let data = await fetch(url,{
+        headers: {
+          'Authorization': `Bearer ${import.meta.env.VITE_NEWS_API}`,
+        }
+      });
+      
       let parsedData = await data.json();
       setArticles(parsedData.articles);
       setTotalResults(parsedData.totalResults);
